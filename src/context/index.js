@@ -33,6 +33,14 @@ export const Provider = (props) => {
         }))
     }
 
+    const generateLoser = () => {
+        const {players} = state;
+        setState((prevState) => ({
+            ...prevState,
+            result: players[Math.floor(Math.random() * players.length)]
+        }))
+    }
+
     // check if there are enough player
     // if not --> call toastify
     const nextHandler = () => {
@@ -44,8 +52,22 @@ export const Provider = (props) => {
                 autoClose: 2000,
             });
         } else {
-            console.log('move to stage 2')
+            setState((prevState) => ({
+                ...prevState,
+                stage: 2,
+            }));
+            setTimeout(() => {
+                generateLoser();
+            }, 2000)
         }
+    };
+
+    const resetGame = () => {
+        setState({
+            stage: 1,
+            players: [],
+            result: '',
+        })
     }
 
     return (
@@ -55,6 +77,8 @@ export const Provider = (props) => {
                 addPlayer: addPlayerHandler,
                 removePlayer: removePlayerHandler,
                 next: nextHandler,
+                getNewLoser: generateLoser,
+                reset: resetGame,
             }}>
                 {props.children}
             </Context.Provider>
