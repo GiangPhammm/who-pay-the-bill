@@ -1,23 +1,26 @@
-h1 {
+
+h1 { 
     font-family: 'Pacifico', cursive;
-    color: #db3eb1;
+    color: #DB3EB1;
     text-decoration: underline;
-    text-decoration-color: #41b6e6;
+    text-decoration-color: #41B6E6;
     font-style: italic;
 }
-
+  
 button.miami {
-    margin-top: 15px;
-    background-color: #41b6e6 !important;
-    border-color: #db3eb1 !important;
+    background-color:#41B6E6 !important;
+    border-color:#52a7c9 !important;
+    margin-top: 10px;
 }
-
+  
 .badge-danger {
-    background-color: #42b6e6 !important;
+    color: #f85858;
+    font-size: 20px;
+    padding: 0px;
 }
-
+  
 .wrapper {
-    height: 100vh;
+    height:100vh;
     display: grid;
 }
 
@@ -25,31 +28,43 @@ button.miami {
     align-self: center;
     justify-self: center;
 }
-
-.player-wrapper {
+  
+.players-wrapper {
     height: 200px;
     overflow-y: scroll;
 }
-
-.Toastify {
-    position: fixed;
+  
+.toastify{
+    position:fixed;
 }
-
-.badge {
+  
+.badge{
     cursor: pointer;
 }
-
+  
 .action-button {
-    font-size: 16px;
     font-family: 'Pacifico', cursive;
-    border: 3px solid #42b6e6;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #dc3eb1;
+    color: white;
+    padding: 15px 40px;
+    font-size: 16px;
+    border: 2px solid #e184c7;
     cursor: pointer;
 }
-
+  
 .action-button.btn-2 {
-    right: 230px;
+    right: 200px;
 }
-
+  
+  
+.result-wrapper {
+    text-align: center;
+    margin-top: 30px;
+}
+  
 .result-wrapper h3 {
     color: #41b6e6;
 }

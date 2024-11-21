@@ -77,13 +77,20 @@ export const Stage1 = () => {
                                         {item}
                                         <span
                                             className='badge badge-danger'
-                                            onClick={() => alert('remove')}
+                                            onClick={() => context.removePlayer(index)}
                                         >
                                             x
                                         </span>
                                     </li>
                                 ))}
                             </ul>
+
+                            <div
+                                className='action-button'
+                                onClick={() => context.next()}
+                            >
+                                Next
+                            </div>
                         </div>
                     </>
                 }
