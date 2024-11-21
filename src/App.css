@@ -7,9 +7,9 @@ h1 {
 }
 
 button.miami {
+    margin-top: 15px;
     background-color: #41b6e6 !important;
     border-color: #db3eb1 !important;
-    margin-top: 15px;
 }
 
 .badge-danger {

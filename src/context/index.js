@@ -11,8 +11,21 @@ export const Provider = (props) => {
         }
     )
 
+    const addPlayerHandler = (name) => {
+        setState((prevState) => ({
+            ...prevState,
+            players: [
+                ...prevState.players,
+                name,
+            ]
+        }))
+    }
+
     return (
-        <Context.Provider value={{state}}>
+        <Context.Provider value={{
+            state,
+            addPlayer: addPlayerHandler
+        }}>
             {props.children}
         </Context.Provider>
     );

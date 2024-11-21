@@ -9,13 +9,16 @@ export const Stage1 = () => {
     const [error, setError] = useState([false, '']);
 
     const handleSubmit = (e) => {
+        // prevent rerender
         e.preventDefault();
 
         const value = textInput.current.value;
         const validate = validateInput(value);
 
         if (validate) {
-            console.log(value);
+            setError([false, '']);
+            context.addPlayer(value);
+            textInput.current.value = '';
         } else {
             console.log('error');
         }
@@ -30,13 +33,15 @@ export const Stage1 = () => {
         }
 
         if (value.length <=2) {
-            setError([true, 'Sorry, you need at least 3 characters']);
+            setError([true, 'Sorry, you need at least 3 char']);
 
             return false
         }
 
         return true;
     }
+
+    console.log(context);
 
     return (
         <>
@@ -49,6 +54,13 @@ export const Stage1 = () => {
                         ref={textInput}
                     />
                 </Form.Group>
+
+                {error[0] ?
+                    <Alert variant='danger'>
+                        {error[1]}
+                    </Alert>
+                : null
+                }
 
                 <Button className='miami' variant='primary' type='submit'>
                     Add player
